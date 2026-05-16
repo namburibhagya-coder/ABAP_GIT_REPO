@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Fujitsu Developments Function group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZVIM_FUJITSUTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZVIM_FUJITSU</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZVIM_FUJITSU_VAL_DETERM</FUNCNAME>
+     <SHORT_TEXT>Template - Exit for validation and agent determination</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>PIS_1REG</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/OTX/PF01_T_1REG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>PIT_EXTDATA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/OTX/PF00_TT_EXT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>PIT_EXTDATA_CLOUD</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/OTX/PF11_TT_EXT_DATA_RES_ITM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>PIT_EXTDATA_CLOUD_PATH</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/OTX/PF11_TT_SCE_DATA_RESULT</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>PE_VALIDATE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>XFELD</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>PE_VALIDATORS</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>TSWHACTOR</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>PET_VALIDATORS_ENH</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/OTX/PF01_TT_VALIDATORS_ENH</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>PIS_1REG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>IDF - Document Data Entry Ledger</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PIT_EXTDATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>External data from BCC</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PIT_EXTDATA_CLOUD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>External data from IES</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PIT_EXTDATA_CLOUD_PATH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>External data from IES with full path</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PE_VALIDATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Validate (&apos;X&apos; = YES / &apos;&apos;= NO)</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PE_VALIDATORS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Table with Organizational Objects</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PET_VALIDATORS_ENH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Validators with enhanced settings</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
