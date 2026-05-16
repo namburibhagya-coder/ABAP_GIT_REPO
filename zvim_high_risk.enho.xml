@@ -20,8 +20,6 @@
      <ENHMODE>D</ENHMODE>
      <FULL_NAME>\TY:/OTX/PF01_CL_MODULE_CC_VALIDA\IN:/OTX/PF01_IF_MODULE\ME:PROCESS_MODULE\SE:END\EI</FULL_NAME>
      <SOURCE>
-      <item/>
-      <item>* Declarations</item>
       <item>DATA: lt_full_txt TYPE /otx/pf11_tt_fulltext_str.</item>
       <item>DATA : lv_company_code TYPE bukrs.</item>
       <item>DATA : ls_reg_dext_temp TYPE /otx/pf11_t_dext.</item>
@@ -31,7 +29,7 @@
       <item>DATA : ls_1reg TYPE /OTX/PF01_T_1REG.</item>
       <item/>
       <item>SELECT SINGLE docid FROM /opt/vim_1head INTO @data(lv_docid) WHERE reg_id = @pes_1reg-regid.</item>
-      <item>SELECT * FROM /otx/pf11_t_dext INTO TABLE @DATA(lt_reg_dext) WHERE regid =  @pes_1reg-regid. &quot; Exctraction table data</item>
+      <item>SELECT * FROM /otx/pf11_t_dext INTO TABLE @DATA(lt_reg_dext) WHERE regid =  @pes_1reg-regid.</item>
       <item/>
       <item>TRY.</item>
       <item>TRY.</item>
@@ -39,7 +37,6 @@
       <item>EXPORTING</item>
       <item>pi_regid     = pes_1reg-regid</item>
       <item>pi_docid     = lv_docid</item>
-      <item>*    pi_proj_id   =</item>
       <item>IMPORTING</item>
       <item>pet_fulltext = lt_full_txt .</item>
       <item/>
@@ -73,30 +70,6 @@
       <item>ENDIF.</item>
       <item/>
       <item>ENDIF.</item>
-      <item>*Data : lv_regid TYPE /OTX/PF01_E_REGID.</item>
-      <item>*DATA lcl_indexer TYPE REF TO /opt/cl_vim_doc_processor.</item>
-      <item>*DATA :   l_docid    TYPE /opt/docid.</item>
-      <item>*SELECT SINGLE REGID FROM /OTX/PF11_T_FULL into lv_regid where regid = pes_1reg-regid.</item>
-      <item>*if sy-subrc NE 0.</item>
-      <item>* Set status &quot;Ready for business application / process&quot;</item>
-      <item>*      pe_status = /otx/pf01_if_constants_idf=&gt;mc_stat_97.</item>
-      <item>*      pes_1reg  = ms_1reg.</item>
-      <item>*      me-&gt;cancel_ies_session( ).</item>
-      <item>*   ls_1reg = pes_1reg.</item>
-      <item>*   ls_1reg-status = &apos;97&apos;.</item>
-      <item>*   update /otx/pf01_t_1reg from ls_1reg.</item>
-      <item>** Update DP status to obsolate.</item>
-      <item>* Select SINGLE docid  from /OPT/VIM_1head into l_docid where reg_id = pes_1reg-regid.</item>
-      <item>* CREATE OBJECT lcl_indexer</item>
-      <item>*      EXPORTING</item>
-      <item>*        docid = l_docid.</item>
-      <item>*lcl_indexer-&gt;index_header-status = &apos;10&apos;.</item>
-      <item>*CALL METHOD lcl_indexer-&gt;update.</item>
-      <item>*  EXPORTING</item>
-      <item>*    iv_status = &apos;97&apos;.</item>
-      <item/>
-      <item>*endif .</item>
-      <item/>
       <item/>
       <item>ENDTRY.</item>
      </SOURCE>
